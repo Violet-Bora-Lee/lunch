@@ -1,12 +1,19 @@
 const express = require('express');
 const compress = require('compression');
+const connectDB = require('./config/db');
 
 const app = express();
 app.use(compress());
 
+// Connect DB
+connectDB();
 
-app.get('/', (req, res) =>
-  res.json({msg: 'Welcome to the lunch app API...'}));
+// Initialize Middleware
+app.use(express.json( { extended: false }));
+
+// Routes
+app.use('/api/people', require('./routes/people'));
+
 
 const PORT = process.env.PORT || 9000;
 
