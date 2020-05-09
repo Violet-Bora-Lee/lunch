@@ -17,7 +17,27 @@ router.get('/', async (req, res) => {
 
 // @route     POST api/people
 // @desc      get people
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
+  const { name } = req.body;
+
+  let person = await Person.findOne({ name });
+
+  if (person) {
+    return res.status(400).json({ msg: 'Duplicated name.'})
+  }
+
+  try {
+    const newPerson = new Person({
+      name
+    });
+
+    const person = await newPerson.save();
+
+    res.json(person);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error')
+  }
   res.send('post people');
 });
 
