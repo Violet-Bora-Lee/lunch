@@ -5,7 +5,6 @@ import thunkMiddleware from 'redux-thunk'
 
 import rootReducer from './modules'
 
-import './index.css'
 import App from './App'
 import registerServiceWorker from './registerServiceWorker'
 
