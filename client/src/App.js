@@ -7,7 +7,7 @@ import NavBar from "./components/layout/NavBar"
 import People from "./components/people/People";
 import AddBtn from "./components/layout/AddBtn";
 import AddPersonModal from "./components/people/AddPersonModal";
-
+import EditPersonModal from "./components/people/EditPersonModal";
 // import {
 // 	fetchPeople,
 // 	getPeople
@@ -38,6 +38,7 @@ const App = () => {
 				<div className="container">
 					<AddBtn/>
 					<AddPersonModal/>
+					<EditPersonModal/>
 					<People/>
 				</div>
 			</Fragment>

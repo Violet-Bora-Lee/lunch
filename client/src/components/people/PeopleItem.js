@@ -8,7 +8,7 @@ const PeopleItem = ({ person }) => {
 	return (
 		<li className="collection-item">
 			<div>
-				<a href="#edit-person-modal">{name}</a>
+				<a href="#edit-person-modal" className="modal-trigger">{name}</a>
 				<a href="#!" className="secondary-content">
 					<i className="material-icons grey-text">delete</i>
 				</a>
