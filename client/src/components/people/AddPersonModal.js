@@ -9,6 +9,9 @@ const AddPersonModal = () => {
 			M.toast({ html: 'Please enter a name'});
 		} else {
 			console.log(name)
+
+			// Clear field
+			setName('');
 		}
 	}
 
