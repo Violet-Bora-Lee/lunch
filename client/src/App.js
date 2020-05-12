@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 import NavBar from "./components/layout/NavBar"
 import People from "./components/people/People";
+import AddBtn from "./components/layout/AddBtn";
 
 // import {
 // 	fetchPeople,
@@ -34,6 +35,7 @@ const App = () => {
 			<Fragment>
 				<NavBar/>
 				<div className="container">
+					<AddBtn/>
 					<People/>
 				</div>
 			</Fragment>
