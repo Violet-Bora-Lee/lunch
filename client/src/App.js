@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import NavBar from "./components/layout/NavBar"
 import People from "./components/people/People";
 import AddBtn from "./components/layout/AddBtn";
+import AddPersonModal from "./components/people/AddPersonModal";
 
 // import {
 // 	fetchPeople,
@@ -36,6 +37,7 @@ const App = () => {
 				<NavBar/>
 				<div className="container">
 					<AddBtn/>
+					<AddPersonModal/>
 					<People/>
 				</div>
 			</Fragment>
