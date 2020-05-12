@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 // import { connect } from 'react-redux'
 
 import NavBar from "./components/layout/NavBar"
+import People from "./components/people/People";
 
 // import {
 // 	fetchPeople,
@@ -32,6 +33,9 @@ const App = () => {
 		<Router>
 			<Fragment>
 				<NavBar/>
+				<div className="container">
+					<People/>
+				</div>
 			</Fragment>
 		</Router>
 	)
