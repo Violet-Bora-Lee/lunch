@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PeopleItem from "./PeopleItem";
 
 const People = () => {
 	const [people, setPeople] = useState([]);
@@ -29,7 +30,7 @@ const People = () => {
 			{!loading && people.length === 0 ? (
 				<p className="center">No people to show</p>
 			) : (
-				people.map(person => <li>{person.name}</li>)
+				people.map(person => <PeopleItem person={person} key={person._id}/>)
 			)}
 
 
