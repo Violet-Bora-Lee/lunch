@@ -8,6 +8,9 @@ import People from "./components/people/People";
 import AddBtn from "./components/layout/AddBtn";
 import AddPersonModal from "./components/people/AddPersonModal";
 import EditPersonModal from "./components/people/EditPersonModal";
+
+import { Provider } from "react-redux";
+import store from "./store";
 // import {
 // 	fetchPeople,
 // 	getPeople
@@ -32,17 +35,19 @@ const App = () => {
 	})
 
 	return (
-		<Router>
-			<Fragment>
-				<NavBar/>
-				<div className="container">
-					<AddBtn/>
-					<AddPersonModal/>
-					<EditPersonModal/>
-					<People/>
-				</div>
-			</Fragment>
-		</Router>
+		<Provider store={store}>
+			<Router>
+				<Fragment>
+					<NavBar/>
+					<div className="container">
+						<AddBtn/>
+						<AddPersonModal/>
+						<EditPersonModal/>
+						<People/>
+					</div>
+				</Fragment>
+			</Router>
+		</Provider>
 	)
 }
 
