@@ -1,4 +1,4 @@
-import { FETCH_PEOPLES, SET_LOADING, PEOPLE_ERROR } from '../actions/types';
+import { FETCH_PEOPLES, SET_LOADING, PEOPLE_ERROR, ADD_PERSON } from '../actions/types';
 
 const initialState = {
   peoples: null,
@@ -15,6 +15,12 @@ export default (state = initialState, action) => {
 	    peoples: action.payload,
         loading: false
       }
+    case ADD_PERSON:
+	  return {
+	    ...state,
+		peoples: [...state.peoples, action.payload],
+		loading: false
+	  }
     case SET_LOADING:
       return {
         ...state,

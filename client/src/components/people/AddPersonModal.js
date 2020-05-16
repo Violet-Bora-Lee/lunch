@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from "prop-types";
+import { addPerson } from "../../actions/peopleActions";
 import M from 'materialize-css/dist/js/materialize.min'
 
-const AddPersonModal = () => {
+const AddPersonModal = ({ addPerson }) => {
 	const [name, setName] = useState('');
 
 	const onSubmit = () => {
 		if (name === '') {
 			M.toast({ html: 'Please enter a name'});
 		} else {
-			console.log(name)
+			const newPerson = {
+				name
+			}
+
+			addPerson(newPerson);
+
+			M.toast({html: `${name} is added.`})
 
 			// Clear field
 			setName('');
@@ -43,9 +52,13 @@ const AddPersonModal = () => {
 	);
 };
 
+AddPersonModal.propTypes = {
+	addPerson: PropTypes.func.isRequired,
+}
+
 const modalStyle = {
 	width: '60%',
 	height: '30%'
 }
 
-export default AddPersonModal;
+export default connect(null, {addPerson})(AddPersonModal);

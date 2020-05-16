@@ -4,7 +4,7 @@ const router = express.Router();
 const Person = require('../models/Person');
 
 // @route     GET api/people
-// @desc      get people(all person)
+// @desc      get peoples
 router.get('/', async (req, res) => {
   try {
     const people = await Person.find();
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 });
 
 // @route     POST api/people
-// @desc      get people
+// @desc      add people
 router.post('/', async (req, res) => {
   const { name } = req.body;
 

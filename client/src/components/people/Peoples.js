@@ -33,6 +33,7 @@ const Peoples = ({ people: { peoples, loading }, fetchPeoples }) => {
 
 Peoples.propTypes = state => ({
 	people: PropTypes.object.isRequired,
+	fetchPeoples: PropTypes.func.isRequired,
 })
 
 const mapStateToProps = state => ({
