@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 // import { connect } from 'react-redux'
 
 import NavBar from "./components/layout/NavBar"
-import People from "./components/people/People";
+import People from "./components/people/Peoples";
 import AddBtn from "./components/layout/AddBtn";
 import AddPersonModal from "./components/people/AddPersonModal";
 import EditPersonModal from "./components/people/EditPersonModal";

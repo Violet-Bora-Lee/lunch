@@ -1,7 +1,7 @@
 import { FETCH_PEOPLES, SET_LOADING, PEOPLE_ERROR } from './types';
 
-// get people from server
-export const fetchPeople = () => async dispatch => {
+// get peoples from server
+export const fetchPeoples = () => async dispatch => {
 
   try {
     setLoading();
