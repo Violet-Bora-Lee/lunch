@@ -2,6 +2,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:promise/recommended",
-    "standard"
+    "standard",
+    "react-app",
+    "standard-react"
   ]
 }
