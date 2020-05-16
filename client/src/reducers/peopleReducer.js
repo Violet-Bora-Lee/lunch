@@ -1,4 +1,4 @@
-import { FETCH_PEOPLES, SET_LOADING, PEOPLE_ERROR, ADD_PERSON } from '../actions/types';
+import {FETCH_PEOPLES, SET_LOADING, PEOPLE_ERROR, ADD_PERSON, DELETE_PERSON} from '../actions/types';
 
 const initialState = {
   peoples: null,
@@ -21,6 +21,12 @@ export default (state = initialState, action) => {
 		peoples: [...state.peoples, action.payload],
 		loading: false
 	  }
+    case DELETE_PERSON:
+	  return {
+	    ...state,
+	    peoples: state.peoples.filter(person => person._id !== action.payload),
+	    loading: false
+      }
     case SET_LOADING:
       return {
         ...state,

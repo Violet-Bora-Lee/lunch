@@ -1,4 +1,4 @@
-import { FETCH_PEOPLES, SET_LOADING, PEOPLE_ERROR, ADD_PERSON } from './types';
+import {FETCH_PEOPLES, SET_LOADING, PEOPLE_ERROR, ADD_PERSON, DELETE_PERSON} from './types';
 
 // get peoples from server
 export const fetchPeoples = () => async dispatch => {
@@ -48,6 +48,28 @@ export const addPerson = (person) => async dispatch => {
 		})
 	}
 
+};
+
+// delete person from server
+export const deletePerson = (id) => async dispatch => {
+
+	try {
+		setLoading();
+
+		await fetch(`/api/people/${id}`, {
+			method: 'DELETE',
+		});
+
+		dispatch({
+			type: DELETE_PERSON,
+			payload: id,
+		});
+	} catch (err) {
+		dispatch({
+			type: PEOPLE_ERROR,
+			payload: err.respond.data
+		})
+	}
 };
 
 
